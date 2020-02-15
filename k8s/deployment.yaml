@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ko-container
+spec:
+  selector:
+    matchLabels:
+      app: ko-container
+  template:
+    metadata:
+      labels:
+        app: ko-container
+    spec:
+      containers:
+      - name: ko-container
+        image: github.com/feloy/ko-container
+        ports:
+        - containerPort: 8080
